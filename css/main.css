@@ -83,6 +83,19 @@ textarea {
   resize: vertical;
 }
 
+/* ---- MM: Add Browser Upgrade Prompt
+/*
+==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
@@ -92,21 +105,44 @@ textarea {
 /* ---- MM: Add (Header-Footer) styles for header, header content-wrapper, header nav ul, footer, 
    footer social-icons, and footer social p ----*/
 
+/* ---- MM: Add a width value to the content-wrapper element ---- */
+.content-wrapper {
+  width: 90%;
+  margin: 50px 0;
+}
+
 header {
   display: flex;
   justify-content: center;
+  padding: 15px 0;
 }
 
+/* ---- MM: set a rule of margin: 0 ---- */
 header .content-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-flow: row wrap;
+  margin: 0;
 }
 
+/* --- MM: Add a width value to the header-divider element ---- */
+.header-divider {
+  width: 100%;
+  height: 1px;
+  margin: 10px 0 20px 0;
+}
+
+/* ---- MM: Add a width value to the header nav code block ---- */
+header nav {
+  width: 60%;
+}
+
+/* ---- MM: Add a width value to the header nav ul element ---- */
 header nav ul {
   display: flex;
   justify-content: space-around;
+  width: 100%;
 }
 
 footer {
@@ -114,6 +150,20 @@ footer {
   flex-direction: column;
   align-items: center;
   text-align: center;
+}
+
+/* ---- MM: set a rule of margin: 0 ---- */
+footer p {
+  margin: 0;
+}
+
+/* ---- MM: Add a width value to the footer content-wrapper ---- */
+footer .content-wrapper {
+  width: 55%;
+}
+
+footer .contact {
+  margin-bottom: 50px;
 }
 
 footer .social-icons {
@@ -126,6 +176,10 @@ footer .social-icons p {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+footer .copyright {
+  margin: 20px 0;
 }
 
 /* -------------------- Mobile Styles - Homepage -------------------- */
@@ -154,6 +208,16 @@ aside {
   justify-content: center;
 }
 
+.features h2 {
+  margin-bottom: 60px;
+}
+
+/* ---- MM: Add a width value to the features-article element ---- */
+.features article {
+  width: 63%;
+  margin: 30px 0;
+}
+
 .features .features-items {
   display: flex;
   justify-content: center;
@@ -161,11 +225,26 @@ aside {
   flex-flow: row wrap;
 }
 
+/* ---- MM: set a rule of margin: 0 ---- */
+.features p {
+  margin: 0;
+}
+
 /* Reviews */
 
 .reviews {
   display: flex;
   justify-content: center;
+}
+
+.reviews h2 {
+  margin-bottom: 40px;
+}
+
+/* ---- MM: Add a width value to the reviews h3 element ---- */
+.reviews h3 {
+  width: 55%;
+  margin: 20px 0;
 }
 
 /* ==========================================================================
@@ -185,6 +264,11 @@ aside {
     justify-content: center;
   }
   
+/* ---- MM: set a rule of margin: 0 ---- */
+  .contact-content p {
+    margin: 0;
+  }
+
   /* ==========================================================================
      FAQ Page
      ========================================================================== */
@@ -199,8 +283,17 @@ aside {
     justify-content: center;
     align-items: flex-start;
     flex-flow: row wrap;
+    margin: 50px 0 0 0;
+  }
+
+  .faq h2 {
+    margin-bottom: 40px;
   }
   
+  .faq-content {
+    margin-bottom: 50px;
+  }
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
@@ -209,8 +302,14 @@ aside {
  * Hide visually and from screen readers
  */
 
-.hidden,
-[hidden] {
+ /* ---- MM: Correction to .hidden coding ----
+ .hidden,
+ [hidden] {
+    display: none !important;
+ }
+ */
+
+ .hidden {
   display: none !important;
 }
 
@@ -223,9 +322,13 @@ aside {
  *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
  */
 
+/* -------------------------------------------- */
+/* ---- MM: Replaace .sr-only element with .visuallyhidden
 .sr-only {
+*/
+.visuallyhidden {
   border: 0;
-  clip: rect(0, 0, 0, 0);
+  clip: rect(0 0 0 0);
   height: 1px;
   margin: -1px;
   overflow: hidden;
@@ -237,13 +340,17 @@ aside {
 }
 
 /*
- * Extends the .sr-only class to allow the element
+ * Extends the .visuallyhidden class to allow the element
  * to be focusable when navigated to via the keyboard:
  * https://www.drupal.org/node/897638
  */
 
+ /* ---- MM: Replace .sr-only with .visuallyhidden ----
 .sr-only.focusable:active,
 .sr-only.focusable:focus {
+*/
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
   clip: auto;
   height: auto;
   margin: 0;
@@ -252,6 +359,7 @@ aside {
   white-space: inherit;
   width: auto;
 }
+/* -------------------------------------------- */
 
 /*
  * Hide visually and from screen readers, but maintain layout
@@ -276,7 +384,9 @@ aside {
 .clearfix::before,
 .clearfix::after {
   content: " ";
+  /* 1 */
   display: table;
+  /* 2 */
 }
 
 .clearfix::after {
