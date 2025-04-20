@@ -319,6 +319,12 @@ input[type=button] {
   flex-flow: row wrap;
 }
 
+/* MM: Increase font size for unplugged retreat features icons  */
+.features i {
+  font-size: 3.75em;
+  margin-bottom: 40px;
+}
+
 .features p {
   text-align: center;
   margin: 0;
