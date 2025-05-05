@@ -108,6 +108,7 @@
     font-family: "Open Sans", sans-serif;
     color: #e2e3ed;
     text-align: left;
+    background-color: #202322;
   }
   
   ul,
@@ -163,11 +164,11 @@
   /* -------------------- Base Header - Footer Styles -------------------- */
   
   header {
+    background-color: #202322;
     display: flex;
     justify-content: center;
     padding: 15px 0;
-    background-color: #202322;
-  }
+  }  
   
   header .content-wrapper {
     margin: 0;
@@ -206,11 +207,11 @@
   }
   
   footer {
+    background-color: #202322;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    background-color: #202322;
   }
   
   footer p {
@@ -327,7 +328,6 @@
   .features .features-items {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
     flex-flow: row wrap;
   }
   
@@ -408,11 +408,11 @@
   }
   
   .faq .content-wrapper {
+    margin: 50px 0 0 0;
     display: flex;
     justify-content: center;
     align-items: flex-start;
     flex-flow: row wrap;
-    margin: 50px 0 0 0;
   }
   
   .faq h2 {
@@ -517,7 +517,7 @@
      Modify as content requires.
      ========================================================================== */
   
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width:768px) {
     /*Tablet styles here*/
   
     /* General styles */
@@ -593,7 +593,11 @@
     .features h2 {
       margin-bottom: 20px;
     }
-  
+
+    .features .features-items {
+      align-items: flex-start;
+    }
+
     .features article {
       display: flex;
       align-items: center;
@@ -639,7 +643,6 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-direction: row;
     }
   
     footer .contact {
@@ -721,7 +724,7 @@
     }
   }
   
-  @media only screen and (min-width: 1200px) {
+  @media only screen and (min-width:1200px) {
     /*Desktop styles here*/
   
     /* General styles */
@@ -759,10 +762,9 @@
       justify-content: space-around;
     }
   
-    /* MM: Adjust width from 30% to 40% */
     aside .content-wrapper .form-description,
     aside .content-wrapper .form {
-      width: 40%;
+      width: 30%;
     }
   
     .form-description p {
@@ -851,11 +853,11 @@
     }
   
     a[href]:after {
-      content: " (" attr(href) ")";
+      content: " ("attr(href) ")";
     }
   
     abbr[title]:after {
-      content: " (" attr(title) ")";
+      content: " ("attr(title) ")";
     }
   
     /*
